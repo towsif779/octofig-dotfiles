@@ -1,0 +1,98 @@
+@define-color foreground #eeeeee;
+@define-color foreground-inactive #aaaaaa;
+@define-color background #000000;
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar {
+    color: @foreground;
+    background-color: @background;
+}
+
+#workspaces button {
+    color: @foreground;
+    padding-left: 0.7em;
+}
+
+#taskbar {
+  background: transparent;
+  border-radius: 0px;
+  padding: 0px 2px;
+  margin: 0px -2px;
+}
+
+#bluetooth {
+  margin: -0 -2px;   /* left/right spacing */
+    padding: 0 0px;
+}
+
+
+#tray {
+  color: #ffffff;
+}
+
+
+#taskbar button {
+  padding: 0px 0px;
+  margin: 1px 02px;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+#taskbar button.active {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#taskbar button:hover {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#custom-cava {
+	background: @background-primary;
+	color: @green;
+	
+	margin: -4px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+#custom-cpucat {
+    font-family: "Waycat", monospace;
+    font-size: 18px;
+    color: white;
+    padding: 0 8px;
+}
+
+#custom-skull {
+    font-family: "Skulltype", monospace;
+    font-size: 28px;
+    color: red;
+    padding: 0 8px;
+}
+
+
+#workspaces button.empty {
+    color: @foreground-inactive;
+}
+
+#memory,
+#custom-platform-profile {
+    padding-left: 1em
+}
+
+#wireplumber,
+#battery,
+#idle_inhibitor,
+#language,
+#network,
+#bluetooth,
+#tray {
+    padding-right: 1em 
+}
+
+
