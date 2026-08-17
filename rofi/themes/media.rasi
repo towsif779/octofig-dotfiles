@@ -1,0 +1,14 @@
+window {
+    width: 200px;
+    height: 200px;
+    location: center;
+    anchor: north;
+    border-radius: 10px;
+}
+listview {
+    lines: 5;
+    fixed-height: 40px;
+}
+element {
+    padding: 5px 10px;
+}
