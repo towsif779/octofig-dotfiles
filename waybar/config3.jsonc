@@ -1,0 +1,66 @@
+{
+    "layer": "top",
+    "position": "top",
+
+"reload_style_on_change": true,
+
+
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "custom/spotify",
+        "cpu",
+        "memory",
+        "network",
+        "pulseaudio"
+    ],
+
+    "custom/arch": {
+        "format": "",
+     "on-click": "swaync-client -t -sw",    
+    "tooltip": false
+        
+    },
+
+    "custom/spotify": {
+        "exec": "~/.config/waybar/scripts/spotify.sh",
+        "interval": 2,
+        "format": "🎧 {}",
+        "max-length": 40,
+        "tooltip": false,
+        "escape": true,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous"
+    },
+
+    "clock": {
+        "format": "󰥔 {:%H:%M}",
+        "on-click": "gsimplecal"
+    },
+
+    "cpu": {
+        "format": " {usage}%"
+    },
+
+    "memory": {
+        "format": " {}%"
+    },
+
+    "network": {
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪"
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰖁 Muted"
+    }
+}
