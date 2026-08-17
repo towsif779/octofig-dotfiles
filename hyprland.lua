@@ -1,7 +1,4 @@
 -- ──────────── hyprland.lua ────────────
--- Converted from hyprland.conf (Hyprland 0.55+ Lua config)
--- Put this at ~/.config/hypr/hyprland.lua and RESTART Hyprland
--- (rename/remove your old hyprland.conf first, or it may still be used)
 
 local mainMod = "SUPER"
 
@@ -19,7 +16,7 @@ hl.config({
         gaps_in     = 5,
         gaps_out    = 12,
         border_size = 0,
-        -- ["col.active_border"] = "rgba(33ccffee)", -- was commented out in original
+        
         ["col.inactive_border"] = "rgba(595959aa)",
     },
 })
@@ -72,9 +69,9 @@ hl.bind("CTRL + Print",   hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy"))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("clipman pick -t rofi"))
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("env QT_QPA_PLATFORM=wayland /usr/bin/sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/"))
 
-hl.bind(mainMod .. " + R", hl.dsp.layout("togglesplit")) -- dwindle-only dispatcher
+hl.bind(mainMod .. " + R", hl.dsp.layout("togglesplit")) 
 
--- cyclenext -> window.cycle_next(); double check this against your Hyprland version
+
 hl.bind(mainMod .. " + Z", hl.dsp.window.cycle_next())
 
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.local/bin/toggle-waybar"))
@@ -82,7 +79,6 @@ hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("pkill wvkbd-mobintl || wvkbd-mobintl
 hl.bind("CTRL + W", hl.dsp.exec_cmd("~/.local/bin/waybar-picker"))
 
 
--- ~/.config/hypr/hyprland.lua
 
 hl.bind("ALT + A", hl.dsp.send_shortcut({ mods = "", key = "Z" }))
 hl.bind("ALT + S", hl.dsp.send_shortcut({ mods = "", key = "X" }))
@@ -101,15 +97,15 @@ hl.bind("SUPER + grave", function()
     end
 end)
 
--- bind = SUPER, grave, scrolloverview:overview, toggle  (was already commented out)
 
--- Change workspace (mainMod + 1..9) / move window to workspace (mainMod + SHIFT + 1..9)
+
+
 for i = 1, 9 do
     hl.bind(mainMod .. " + " .. i,          hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. i,  hl.dsp.window.move({ workspace = i }))
 end
 
--- Scrolling-layout column moves (native "scrolling" layout dispatcher messages)
+
 hl.bind(mainMod .. " + A",         hl.dsp.layout("move -col"))
 hl.bind(mainMod .. " + S",         hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.layout("swapcol l"))
@@ -159,15 +155,15 @@ hl.config({
         rounding = 10,
         blur = {
             enabled            = true,
-            size               = 7,   -- smaller blur radius
-            passes             = 1,   -- 1 pass = low GPU cost
+            size               = 7,   
+            passes             = 1,   
             new_optimizations  = true,
             ignore_opacity     = true,
             xray               = false,
             noise              = 0.02,
             brightness         = 1.0,
             contrast           = 1.0,
-            vibrancy           = 0.0, -- turn off vibrancy for performance
+            vibrancy           = 0.0, 
             vibrancy_darkness  = 0.0,
         },
     },
@@ -194,11 +190,11 @@ hl.config({
 --[[  hl.config({
     plugin = {
         scrolloverview = {
-            scale         = 0.5,       -- preferred overview scale
+            scale         = 0.5,       
             workspace_gap = 50,
-            layout        = "vertical", -- vertical or horizontal
-            wallpaper     = 0,          -- 0: global only, 1: per-workspace only, 2: both
-            blur          = false,      -- blur only the main overview wallpaper
+            layout        = "vertical", 
+            wallpaper     = 0,          
+            blur          = false,      
             shadow = {
                 enabled       = false,
                 range         = 50,
@@ -227,10 +223,10 @@ hl.window_rule({
 })
 
 -- ──────────── THEME / GTK / QT ────────────
--- These ran on every reload in the old "exec =" form (not exec-once),
--- so they're called directly here rather than inside the start hook.
-hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"') -- for GTK4 apps
--- for GTK3 apps you need adw-gtk3: sudo pacman -S adw-gtk-theme
-hl.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3"') -- for GTK3 apps
--- for KDE/Qt apps: sudo pacman -S qt5ct qt6ct kvantum kvantum breeze-icons
-hl.env("QT_QPA_PLATFORMTHEME", "qt6ct") -- for Qt apps
+
+
+hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"') 
+
+hl.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3"') 
+
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct") 
