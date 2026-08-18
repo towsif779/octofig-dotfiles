@@ -1,0 +1,111 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+	"cssPriority": "user",
+"reload_style_on_change": true,
+
+  "control-center-width": 250,
+  "control-center-height": 860, 
+  "control-center-margin-top": 2,
+  "control-center-margin-bottom": 2,
+  "control-center-margin-right": 1,
+  "control-center-margin-left": 0,
+
+  "notification-window-width": 400,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+
+  "timeout": 4,
+  "timeout-low": 2,
+  "timeout-critical": 6,
+  
+  "fit-to-screen": false,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": [
+    "label",
+    "buttons-grid",
+    "mpris",
+    "title",
+    "volume",
+    "backlight",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": " 󰎟 "
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": " "
+    },
+    "mpris": {
+      "image-size": 70,
+      "image-radius": 8
+    },
+ "backlight": {
+     "label": "󰕾",
+    "device": "acpi_video0",
+    "show-percentage-label": true,
+    "icon": true,
+    "step": 5
+  },
+    "volume": {
+      "label": "󰕾",
+        "show-per-app": true
+    },
+    "buttons-grid": {
+      "actions": [
+
+{
+  "label": "󰝚",
+  "command": "kitty --class rmpc -e rmpc"
+ },
+
+{
+  "label": "󰻀",
+  "command": "env WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR kitty --class fastfetch sh -c 'fastfetch --logo-type kitty --logo-type kitty; read'"
+},
+
+{
+  "label": " ",
+  "command": "wlogout"
+},
+
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "󰏘",
+          "command": "nwg-look"
+        }
+      ]
+    }
+  }
+}
