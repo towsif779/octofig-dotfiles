@@ -1,0 +1,100 @@
+@import url("/home/towsif/.config/waybar/colors.css");
+
+window {
+    background-color: alpha(@background, 0.7);
+    color: @foreground;
+    border-radius: 3px;
+}
+
+.notification-center {
+    background-color: alpha(@background, 0.6);
+}
+
+.notification {
+    background-color: alpha(@color0, 0.7);
+    min-width: 100%;
+    border-radius: 10px;
+    color: @foreground;
+}
+
+.mpris-title {
+    font-size: 12px;
+    color: @foreground;
+}
+
+.mpris-artist {
+    font-size: 10px;
+    opacity: 0.7;
+    color: @foreground;
+}
+
+.mpris-cover {
+    min-width: 40px;
+    min-height: 30px;
+}
+
+.widget {
+    min-height: 48px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.notification:hover {
+    transition: none;
+}
+
+.widget-backlight label {
+    font-size: 0px;
+}
+
+.widget-backlight image {
+    min-width: 18px;
+    min-height: 18px;
+    margin-right: 6px;
+}
+
+scale trough {
+    background-color: alpha(@foreground, 0.15);
+    border-radius: 6px;
+    min-height: 5px;
+}
+
+scale highlight {
+    background-color: @color4;
+    border-radius: 6px;
+}
+
+scale slider {
+    background-color: @foreground;
+    border-radius: 50%;
+    min-width: 12px;
+    min-height: 12px;
+}
+
+
+/* --- Compact & Transparent Buttons Grid --- */
+.widget-buttons-grid {
+    padding: 2px;
+    margin: 2px;
+    background-color: transparent; /* Removes the grid bounding box background */
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background-color: transparent; /* Pure transparent button background */
+    border: 1px solid alpha(@color4, 0.4); /* Subtle colored border outline */
+    border-radius: 6px;
+    color: @color4; /* Icon color */
+    font-size: 14px; /* Smaller icon text scaling */
+    min-height: 28px; /* Compact height constraint */
+    min-width: 28px; /* Compact width constraint */
+    margin: 2px;
+    padding: 0px;
+    transition: all 0.15s ease;
+}
+
+/* Hover State */
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background-color: alpha(@color4, 0.2); /* Soft transparent glow on hover */
+    color: @color5; /* Swaps to an alternate Wallust color slot */
+    border: 1px solid @color4;
+}
