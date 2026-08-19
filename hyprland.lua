@@ -187,7 +187,7 @@ hl.config({
 })
 
 -- ──────────── PLUGIN: scrolloverview ────────────
---[[  hl.config({
+  hl.config({
     plugin = {
         scrolloverview = {
             scale         = 0.5,       
@@ -203,7 +203,7 @@ hl.config({
             },
         },
     },
-}) ]]
+}) 
 
 -- ──────────── WINDOW RULES ────────────
 hl.window_rule({
